@@ -1,9 +1,12 @@
 import CreateButton from '../../utils/createButton'
 import CustomInput from '../../utils/customInput'
 import './style.css'
-import { Category } from '../../../types/category';
 
-function CreateCategory() {
+type CreateCategoryType ={
+    create: (text: string) => void,
+}
+
+function CreateCategory(props:CreateCategoryType) {
     let categoryName = "";
 
     function onChange(text: string):void {
@@ -13,22 +16,7 @@ function CreateCategory() {
     function handleClick(event: React.MouseEvent):void {
         event.preventDefault()
         
-        if(categoryName.trim().length !== 0){
-            const newCategory:Category = {
-                id: Math.random().toString(36).substr(2, 9),
-                name: categoryName
-            }
-
-            let str:any = localStorage.getItem('categories')
-
-            const catagoryList:Category[] = JSON.parse(str);
-
-            catagoryList.push(newCategory);
-
-            localStorage.setItem('categories', JSON.stringify(catagoryList));
-        }
-
-        console.log(localStorage.getItem('categories'))
+        props.create(categoryName);
     }
 
   return (

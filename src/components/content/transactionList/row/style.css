@@ -1,0 +1,23 @@
+.list-wrapper ul{
+    margin: 0;
+    padding: 0;
+
+    li{
+        list-style-type: none;
+        padding: 10px;
+        margin: 10px;
+        border: 2px solid #333;
+    }
+}
+
+span{
+    margin: 10px;
+}
+
+.income{
+    background-color: rgba(146, 245, 158, 0.4);
+}
+
+.expense{
+    background-color: rgba(195, 122, 137, 0.4);
+}

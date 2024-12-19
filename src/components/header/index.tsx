@@ -9,6 +9,7 @@ function Header(props:HeaderDataType) {
 
   return (
     <div className='header-wrapper'>
+      <p>Помалав</p>
       <p>Hello <span>{props.username}</span></p>
       <p>Budget: <span>{props.budget}</span></p>
     </div>
